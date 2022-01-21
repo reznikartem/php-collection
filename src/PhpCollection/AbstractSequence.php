@@ -22,6 +22,7 @@ use PhpOption\Some;
 use PhpOption\None;
 use PhpOption\Option;
 use OutOfBoundsException;
+use Traversable;
 
 /**
  * A sequence with numerically indexed elements.
@@ -348,12 +349,12 @@ class AbstractSequence extends AbstractCollection implements \IteratorAggregate,
         return false;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->elements);
     }
 
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new \ArrayIterator($this->elements);
     }

@@ -20,6 +20,7 @@ namespace PhpCollection;
 
 use PhpOption\Some;
 use PhpOption\None;
+use Traversable;
 
 /**
  * A simple map implementation which basically wraps an array with an object oriented interface.
@@ -287,12 +288,12 @@ class AbstractMap extends AbstractCollection implements \IteratorAggregate, MapI
         return array_values($this->elements);
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->elements);
     }
 
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new \ArrayIterator($this->elements);
     }

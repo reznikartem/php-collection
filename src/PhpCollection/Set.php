@@ -4,6 +4,7 @@ namespace PhpCollection;
 
 use PhpOption\None;
 use PhpOption\Some;
+use Traversable;
 
 /**
  * Implementation of a Set.
@@ -50,7 +51,7 @@ class Set implements SetInterface
         return new Some(end($this->elements));
     }
 
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new \ArrayIterator(array_values($this->elements));
     }
@@ -177,7 +178,7 @@ class Set implements SetInterface
         }
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->elements);
     }
